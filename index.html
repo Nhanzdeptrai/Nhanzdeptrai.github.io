@@ -1,161 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Control Panel</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    /* Sidebar Styles */
-    .sidebar {
-      width: 250px;
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
-      height: 100vh;
-    }
-    .sidebar h2 {
-      margin-top: 0;
-    }
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #34495e;
-      border-radius: 5px;
-    }
-    .sidebar a:hover {
-      background-color: #1abc9c;
-    }
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Đếm ngược đến Tết Nguyên Đán 2019</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content="Còn bao nhiêu ngày nữa đến Tết Nguyên Đán Kỷ Hợi 2019?"/>
+        <meta property="og:title" content="Đếm ngược đến Tết"/>
+        <meta property="og:description" content="Còn bao nhiêu ngày nữa đến Tết Nguyên Đán Kỷ Hợi 2019?"/>
+        <meta property="og:url" content="https://www.vantuanblog.com/"/>
+        <meta property="og:site_name" content="Sắp Tết"/>
+        <meta property="og:image" content="saptet.com.png"/>
+        <script src='jquery-3.2.1.min.js'></script>
+        <script src="js.js"></script>
+        <style type="text/css">
+            html,body,div,span,h1,h2 {
+                padding: 0;
+                border: 0;
+                margin: 0;
+                background: transparent;
+                font-size: 100%;
+                font-weight: inherit;
+                vertical-align: baseline;
+            }
 
-    /* Main Content Styles */
-    .main-content {
-      flex-grow: 1;
-      padding: 20px;
-      background-color: #ecf0f1;
-    }
-    .header {
-      background-color: #2980b9;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .form-container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+            .clearfix:after {
+                content: "\00A0";
+                display: block;
+                clear: both;
+                visibility: hidden;
+                line-height: 0;
+                height: 0;
+            }
 
-    /* Footer Styles */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-  </style>
-</head>
-<body>
+            html[xmlns] .clearfix {
+                display: block;
+            }
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>UCP Menu</h2>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#profile">Profile Settings</a>
-    <a href="#account">Account Settings</a>
-    <a href="#privacy">Privacy Settings</a>
-    <a href="#notifications">Notifications</a>
-    <a href="#password">Change Password</a>
-    <a href="#logout">Logout</a>
-  </div>
+            * html .clearfix {
+                height: 1%;
+            }
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="header">
-      <h1>User Control Panel</h1>
-    </div>
+            html {
+                height: 100%;
+                background: radial-gradient(ellipse at bottom, #e82219 10%, #33201a 100%);
+                overflow: hidden;
+                text-align: center;
+            }
 
-    <!-- Dashboard Section -->
-    <div id="dashboard" class="form-container">
-      <h2>Dashboard</h2>
-      <p>Welcome to your dashboard, where you can manage all your account settings.</p>
-    </div>
+            body {
+                font-size: 1.6em;
+                background: transparent;
+                color: #ffffff;
+                font-family: 'Dancing Script',Helvetica,Arial,sans-serif;
+            }
 
-    <!-- Profile Settings Section -->
-    <div id="profile" class="form-container">
-      <h2>Profile Settings</h2>
-      <form>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" value="john_doe"><br><br>
-        
-        <label for="bio">Bio:</label><br>
-        <textarea id="bio" name="bio" rows="4" cols="50">This is my bio.</textarea><br><br>
+            #topbar {
+                background-color: #000;
+                padding: 5px 0;
+            }
 
-        <label for="profile-pic">Profile Picture:</label><br>
-        <input type="file" id="profile-pic" name="profile-pic"><br><br>
+            #main {
+                max-width: 1100px;
+                margin: auto;
+                margin-top: 5%;
+            }
 
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
+            .colorlight {
+                text-shadow: 0 0 10px #efe81d,0 0 20px #efe81d,0 0 30px #efe81d,0 0 40px #f80f1f,0 0 70px #f80f1f,0 0 80px #f80f1f,0 0 100px #f80f1f,0 0 150px #f80f1f;
+            }
 
-    <!-- Account Settings Section -->
-    <div id="account" class="form-container">
-      <h2>Account Settings</h2>
-      <form>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="johndoe@example.com"><br><br>
+            h1 {
+                font-size: 3em;
+                margin: .35em 0 0;
+            }
 
-        <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" value="123-456-7890"><br><br>
+            h2 {
+                margin: 0;
+            }
 
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
+            .clock {
+                float: left;
+                overflow: hidden;
+                background-color: #fff;
+                color: #222;
+                border-radius: 30%;
+                position: relative;
+                width: 20%;
+                height: 0;
+                padding-bottom: 20%;
+                margin: 3% 0 3% 4%;
+            }
 
-    <!-- Privacy Settings Section -->
-    <div id="privacy" class="form-container">
-      <h2>Privacy Settings</h2>
-      <form>
-        <label for="profile-visibility">Profile Visibility:</label><br>
-        <select id="profile-visibility" name="profile-visibility">
-          <option value="public">Public</option>
-          <option value="private">Private</option>
-        </select><br><br>
+            .clock .num {
+                font-size: 350%;
+                font-weight: 700;
+                height: 0;
+                line-height: 190%;
+            }
 
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
+            .clock .text {
+                font-size: 130%;
+                text-transform: uppercase;
+                background-color: #eee;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                line-height: 180%;
+            }
 
-    <!-- Change Password Section -->
-    <div id="password" class="form-container">
-      <h2>Change Password</h2>
-      <form>
-        <label for="current-password">Current Password:</label><br>
-        <input type="password" id="current-password" name="current-password"><br><br>
+            .clock.tet {
+                background-color: #f6361e;
+            }
 
-        <label for="new-password">New Password:</label><br>
-        <input type="password" id="new-password" name="new-password"><br><br>
+            .clock.tet .text {
+                background-color: #d00120;
+            }
 
-        <button type="submit">Change Password</button>
-      </form>
-    </div>
-  </div>
+            #taitro {
+                margin-top: 3.4em;
+            }
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Your Website. All rights reserved.</p>
-  </footer>
+            #taitro a {
+                color: #f7e158;
+                text-decoration: none;
+                font-size: 1.5em;
+            }
 
-</body>
-</html>
+            #footer {
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+            }
+
+            @media (max-width: 767px) {
+                body {
+                    font-size:14px;
+                }
+
+                h2 {
+                    font-size: 1.6em;
+                }
+
+                @media (max-width: 480px) {
+                    .clock {
+                        width:35%;
+                        padding-bottom: 35%;
+                        margin: 5% 0 0 10%;
+                    }
+
+                    h1 {
+                        margin-top: .55em;
+                    }
+                }
+
+                @media only screen and (max-width: 767px) and (orientation: landscape) {
+                    #main {
+                        margin-top:1%;
+                    }
+
+                    h1 {
+                        margin-top: 0;
+                    }
+                }
+            </style>
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese" rel="stylesheet">
+        </head>
+        <body>
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT7TLWH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <div id="main">
+                <h2 id="tetornot" class="">Sắp Tết rồi!!!</h2>
+                <div class="clearfix">
+                    <div class="clock">
+                        <div id="days" class="num">&nbsp;</div>
+                        <div id="days-text" class="text">Ngày</div>
+                    </div>
+                    <div class="clock">
+                        <div id="hours" class="num">&nbsp;</div>
+                        <div id="hours-text" class="text">Giờ</div>
+                    </div>
+                    <div class="clock">
+                        <div id="mins" class="num">&nbsp;</div>
+                        <div id="mins-text" class="text">Phút</div>
+                    </div>
+                    <div class="clock">
+                        <div id="secs" class="num">&nbsp;</div>
+                        <div id="secs-text" class="text">Giây</div>
+                    </div>
+                </div>
+                <!---h1 id="tet" class=""></h1---->
+                <div id="taitro">
+                    <!--a href="https://nhanzdeptrai.github.io/" target="_blank">Trung Nhan Blog</a-->
+                    <a href="https://nhanzdeptrai.github.io/" target="_blank">
+                        Đếm ngược<br/>
+                      Tết Nguyên Đán <span id="tentet">&nbsp;</span><br/>TrungNhanBlog
+                    </a>
+                </div>
+            </div>
+          <iframe src="https://www.nhaccuatui.com/lh/background/6DqYD1PatM8q" width="1" height="1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+        </body>
+    </html>
